@@ -83,7 +83,19 @@ class App extends React.Component {
 					</Row>
 					<Row>
 						<Col>
-							<Card />
+							<Card header="test" text="innerText" title="title" />
+						</Col>
+						<Col>
+							<Card header="test" text="innerText" title="title" bgColor="primary" />
+						</Col>
+						<Col>
+							<Card header="test" text="innerText" title="title" />
+						</Col>
+						<Col>
+							<Card header="test" text="innerText" title="title" bgColor="success" />
+						</Col>
+						<Col>
+							<Card header="test" text="innerText" title="title" />
 						</Col>
 					</Row>
 				</Container>

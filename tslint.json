@@ -22,6 +22,7 @@
         "jsx-no-lambda": false,
         "jsx-no-multiline-js": false,
         "jsx-boolean-value": [true, "never"],
+		"jsx-curly-spacing": [false],
         "label-position": true,
         "only-arrow-functions": [false, "allow-declarations", "allow-named-functions"],
         "max-line-length": [ true, 120 ],
