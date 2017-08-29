@@ -1,7 +1,11 @@
 import * as React from 'react';
 import './App.css';
 
+/** Layout Components */
+import { Container, Row, Col } from 'reactstrap';
+
 import { Button } from 'reactstrap';
+import { Alert, UncontrolledAlert } from 'reactstrap';
 
 const logo = require('./logo.svg');
 
@@ -20,6 +24,26 @@ class App extends React.Component {
 				<Button color="info">info</Button>
 				<Button color="success">success</Button>
 				<Button color="warning">warning</Button>
+				<Alert color="info">
+					no strong text <strong>strong text</strong> no strong text again
+				</Alert>
+				<UncontrolledAlert color="primary">i am dismissable</UncontrolledAlert>
+				<Container fluid>
+					<Row>
+						<Col>
+							<UncontrolledAlert color="info">info 1</UncontrolledAlert>
+						</Col>
+						<Col>
+							<UncontrolledAlert color="info">info 2</UncontrolledAlert>
+						</Col>
+						<Col>
+							<UncontrolledAlert color="info">info 3</UncontrolledAlert>
+						</Col>
+						<Col>
+							<UncontrolledAlert color="info">info 4</UncontrolledAlert>
+						</Col>
+					</Row>
+				</Container>;
 			</div>
 		);
 	}
