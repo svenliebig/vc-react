@@ -5,10 +5,11 @@ import './App.css';
 import { Container, Row, Col } from 'reactstrap';
 
 import { Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink, Collapse } from 'reactstrap';
-import { Card, CardText, CardHeader, CardTitle } from 'reactstrap';
 
 import { Button } from 'reactstrap';
 import { Alert, UncontrolledAlert } from 'reactstrap';
+
+import Card from './components/card/Card';
 
 const logo = require('./logo.svg');
 
@@ -82,13 +83,7 @@ class App extends React.Component {
 					</Row>
 					<Row>
 						<Col>
-							<Card className="text-white bg-primary mb-3">
-								<CardHeader>header</CardHeader>
-								<div className="card-body">
-									<CardTitle>title</CardTitle>
-									<CardText>text</CardText>
-								</div>
-							</Card>
+							<Card />
 						</Col>
 					</Row>
 				</Container>
