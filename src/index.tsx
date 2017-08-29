@@ -4,8 +4,11 @@ import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import './index.css';
 
+/** Inluding Bootstrap css */
+import 'bootstrap/dist/css/bootstrap.css';
+
 ReactDOM.render(
-  <App />,
-  document.getElementById('root') as HTMLElement
+	<App />,
+	document.getElementById('root') as HTMLElement
 );
 registerServiceWorker();
