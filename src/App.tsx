@@ -5,6 +5,7 @@ import './App.css';
 import { Container, Row, Col } from 'reactstrap';
 
 import { Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink, Collapse } from 'reactstrap';
+import { Card, CardText, CardHeader, CardTitle } from 'reactstrap';
 
 import { Button } from 'reactstrap';
 import { Alert, UncontrolledAlert } from 'reactstrap';
@@ -79,7 +80,18 @@ class App extends React.Component {
 							<UncontrolledAlert color="info">info 4</UncontrolledAlert>
 						</Col>
 					</Row>
-				</Container>;
+					<Row>
+						<Col>
+							<Card className="text-white bg-primary mb-3">
+								<CardHeader>header</CardHeader>
+								<div className="card-body">
+									<CardTitle>title</CardTitle>
+									<CardText>text</CardText>
+								</div>
+							</Card>
+						</Col>
+					</Row>
+				</Container>
 			</div>
 		);
 	}
