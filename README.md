@@ -13,3 +13,7 @@ Simple React Application with TypeScript, Bootstrap and Less.
 ## Start Tests
 
 `yarn test`
+
+## Example
+
+![example](https://i.imgur.com/NdB6EnJ.png)
