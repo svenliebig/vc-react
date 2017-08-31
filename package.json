@@ -8,6 +8,8 @@
     "@types/node": "^8.0.25",
     "@types/react": "^16.0.5",
     "@types/react-dom": "^15.5.4",
+    "@types/react-router": "^4.0.15",
+    "@types/react-router-dom": "^4.0.7",
     "@types/reactstrap": "^4.3.12",
     "bootstrap": "4.0.0-beta",
     "enzyme": "^2.9.1",
@@ -20,6 +22,7 @@
     "react-addons-css-transition-group": "^15.6.0",
     "react-addons-transition-group": "^15.6.0",
     "react-dom": "^15.6.1",
+    "react-router-dom": "^4.2.2",
     "react-scripts-ts": "2.6.0",
     "react-test-renderer": "^15.6.1",
     "reactstrap": "^4.8.0"
@@ -28,7 +31,7 @@
     "build-css": "gulp less",
     "watch-css": "gulp less-watch",
     "start-js": "react-scripts-ts start",
-    "start": "npm-run-all -p watch-css start-js",
+    "start": "yarn run build-css && npm-run-all -p watch-css start-js",
     "build": "yarn run build-css && react-scripts-ts build",
     "test": "react-scripts-ts test --env=jsdom",
     "eject": "react-scripts-ts eject"

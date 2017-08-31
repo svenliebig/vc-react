@@ -1,20 +1,24 @@
+/** React Imports */
 import * as React from 'react';
-import './App.css';
+import { BrowserRouter as Route, Link } from 'react-router-dom';  
 
-/** Layout Components */
+/** Bootstrap Imports */
 import { Container, Row, Col } from 'reactstrap';
-
-import { Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink, Collapse } from 'reactstrap';
-
+import { Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, Collapse } from 'reactstrap';
 import { Button } from 'reactstrap';
 import { Alert, UncontrolledAlert } from 'reactstrap';
 
-import Card from './components/card/Card';
+/** Component Imports */
+import Card from '../../components/card/Card';
+
+/** Stylesheet Imports */
+import './App.css';
 
 const logo = require('./logo.svg');
 
 interface Appstate {
 	isOpen: boolean;
+	foobar?: Route; // Weil, weil, weil, weil. . noUnusedVariables
 }
 
 class App extends React.Component {
@@ -43,10 +47,10 @@ class App extends React.Component {
 				<Collapse isOpen={this.state.isOpen} navbar>
 					<Nav className="ml-auto" navbar>
 					<NavItem>
-						<NavLink href="https://reactstrap.github.io/components/">Components</NavLink>
+					<Link className="nav-link" to="/">Home</Link>
 					</NavItem>
 					<NavItem>
-						<NavLink href="https://github.com/reactstrap/reactstrap">Github</NavLink>
+						<Link className="nav-link" to="/nothome">Not Home</Link>
 					</NavItem>
 					</Nav>
 				</Collapse>
