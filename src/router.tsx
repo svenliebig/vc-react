@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 /** View Imports */
 import App from './views/app/App';
+import Page from './views/page/page';
 import Error404 from './views/error/404/Error404';
 
 // Should i create a class for this?
@@ -16,8 +17,8 @@ interface RouteInterface {
 
 // Add routes here
 const routesArray: Array<RouteInterface> = [
-	{ path: '/', 	component: App, key: '1' },
-	{ path: '/2', 	component: App, key: '2' }
+	{ path: '/', 		component: App, 	key: '1' },
+	{ path: '/page', 	component: Page, 	key: '2' }
 ];
 
 /**

@@ -52,6 +52,9 @@ class App extends React.Component {
 					<NavItem>
 						<Link className="nav-link" to="/nothome">Not Home</Link>
 					</NavItem>
+					<NavItem>
+						<Link className="nav-link" to="/page">Page</Link>
+					</NavItem>
 					</Nav>
 				</Collapse>
 				</Navbar>
