@@ -1,23 +1,24 @@
+/** React Imports */
 import * as React from 'react';
-import './App.css';
+import { BrowserRouter as Route, Link } from 'react-router-dom';  
 
-/** Layout Components */
+/** Bootstrap Imports */
 import { Container, Row, Col } from 'reactstrap';
-
-import { Navbar, NavbarToggler, NavbarBrand, Nav, NavLink, NavItem, Collapse } from 'reactstrap';
-
+import { Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, Collapse } from 'reactstrap';
 import { Button } from 'reactstrap';
 import { Alert, UncontrolledAlert } from 'reactstrap';
 
+/** Component Imports */
 import Card from '../../components/card/Card';
 
-import { BrowserRouter as Route, Link } from 'react-router-dom';  
+/** Stylesheet Imports */
+import './App.css';
 
 const logo = require('./logo.svg');
 
 interface Appstate {
 	isOpen: boolean;
-	foobar?: Route;
+	foobar?: Route; // Weil, weil, weil, weil. . noUnusedVariables
 }
 
 class App extends React.Component {
@@ -46,16 +47,10 @@ class App extends React.Component {
 				<Collapse isOpen={this.state.isOpen} navbar>
 					<Nav className="ml-auto" navbar>
 					<NavItem>
-						<Link to="/">Home</Link>
+					<Link className="nav-link" to="/">Home</Link>
 					</NavItem>
 					<NavItem>
-						<Link to="/nothome">Not Home</Link>
-					</NavItem>
-					<NavItem>
-						<NavLink href="/">Hard Link</NavLink>
-					</NavItem>
-					<NavItem>
-						<NavLink><Link to="/nothome">Not Home</Link></NavLink>
+						<Link className="nav-link" to="/nothome">Not Home</Link>
 					</NavItem>
 					</Nav>
 				</Collapse>

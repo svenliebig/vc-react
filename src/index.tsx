@@ -3,11 +3,9 @@ import * as ReactDOM from 'react-dom';
 
 import Routes from './router';
 import registerServiceWorker from './registerServiceWorker';
-import './index.css';
 
-/** Inluding Bootstrap css */
-// import 'jquery/dist/jquery';
-// import 'bootstrap/dist/js/bootstrap';
+/** Stylesheet Imports */
+import './index.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
 ReactDOM.render(
