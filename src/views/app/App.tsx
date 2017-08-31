@@ -1,15 +1,14 @@
 /** React Imports */
-import * as React from 'react';
-import { BrowserRouter as Route, Link } from 'react-router-dom';  
+import * as React from 'react'; 
 
 /** Bootstrap Imports */
 import { Container, Row, Col } from 'reactstrap';
-import { Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, Collapse } from 'reactstrap';
 import { Button } from 'reactstrap';
 import { Alert, UncontrolledAlert } from 'reactstrap';
 
 /** Component Imports */
 import Card from '../../components/card/Card';
+import Dashboard from '../../components/dashboard/dashboard';
 
 /** Stylesheet Imports */
 import './App.css';
@@ -17,47 +16,17 @@ import './App.css';
 const logo = require('./logo.svg');
 
 interface Appstate {
-	isOpen: boolean;
-	foobar?: Route; // Weil, weil, weil, weil. . noUnusedVariables
 }
 
 class App extends React.Component {
 	state: Appstate;
 	constructor() {
 		super();
-
-		this.toggleNavbar = this.toggleNavbar.bind(this);
-		this.state = {
-			isOpen: false
-		};
-	}
-
-	toggleNavbar() {
-		this.setState({
-			isOpen: !this.state.isOpen
-		});
 	}
 
 	render() {
 		return (
-			<div className="App">
-				<Navbar color="dark" className="navbar-dark navbar-expand-sm" toggleable fixed="top">
-				<NavbarToggler right onClick={this.toggleNavbar}/>
-				<NavbarBrand href="/">reactstrap</NavbarBrand>
-				<Collapse isOpen={this.state.isOpen} navbar>
-					<Nav className="ml-auto" navbar>
-					<NavItem>
-					<Link className="nav-link" to="/">Home</Link>
-					</NavItem>
-					<NavItem>
-						<Link className="nav-link" to="/nothome">Not Home</Link>
-					</NavItem>
-					<NavItem>
-						<Link className="nav-link" to="/page">Page</Link>
-					</NavItem>
-					</Nav>
-				</Collapse>
-				</Navbar>
+			<Dashboard>
 				<div className="App-header">
 					<img src={logo} className="App-logo" alt="logo" />
 					<h2>Welcome to React</h2>
@@ -106,7 +75,7 @@ class App extends React.Component {
 						</Col>
 					</Row>
 				</Container>
-			</div>
+			</Dashboard>
 		);
 	}
 }
