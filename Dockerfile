@@ -9,6 +9,8 @@ ENV NPM_CONFIG_LOGLEVEL=warn
 # RUN sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
 # RUN apt-get -qq update && apt-get -qq install -y google-chrome-stable
 
+RUN RUN npm install -g yarn
+
 # Create the target directory in the image.
 RUN mkdir -p /usr/src/app
 # Set the created directory as the working directory
@@ -16,16 +18,16 @@ WORKDIR /usr/src/app
 # Copy the package.json inside the working directory
 COPY . /usr/src/app
 # Install required dependencies
-RUN npm install --loglevel=warn
+RUN yarn install --emoji
 
 # Run Tests
-RUN npm test -- --coverage
+RUN yarn test -- --coverage
 
 # Installing Code Climate
-RUN npm install -g codeclimate-test-reporter
+RUN yarm install -g codeclimate-test-reporter
 RUN codeclimate-test-reporter < coverage/lcov.info
 
 # Open port 4200. This is the port that our development server uses
 EXPOSE 4200
 # Start the application. This is the same as running ng serve.
-CMD ["npm", "start"]
+CMD ["yarn", "start"]

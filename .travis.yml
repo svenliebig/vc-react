@@ -4,8 +4,8 @@ services:
 - docker
 
 before_install:
-- docker build -t vc-react/web:1.0 .
-- docker run -d -e CODECLIMATE_REPO_TOKEN=codeclimatetoken --name vc-react-container vc-react/web:1.0
+- docker build -t vc-react/web:1.0 --build-arg CODECLIMATE_REPO_TOKEN=codeclimatetoken .
+- docker run -d --name vc-react-container vc-react/web:1.0
 
 script:
 - docker ps -a
