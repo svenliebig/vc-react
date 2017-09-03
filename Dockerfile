@@ -3,6 +3,7 @@ FROM node:boron
 
 # set the loglevel for npm with environment variable
 ENV NPM_CONFIG_LOGLEVEL=warn
+ENV CODECLIMATE_REPO_TOKEN=codeclimatetoken
 
 # Install Google Chrome
 # RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
