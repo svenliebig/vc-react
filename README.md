@@ -1,5 +1,7 @@
 # VC-React
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/Sly321/vc-react.svg)](https://greenkeeper.io/)
+
 Simple React Application with TypeScript, Bootstrap and Less.
 
 ## Compiles less to css and starts the application
