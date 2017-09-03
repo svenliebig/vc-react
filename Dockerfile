@@ -18,13 +18,13 @@ WORKDIR /usr/src/app
 # Copy the package.json inside the working directory
 COPY . /usr/src/app
 # Install required dependencies
-RUN npm install --emoji
+RUN npm install --loglevel=warn
 
 # Run Tests
 RUN npm test -- --coverage
 
 # Installing Code Climate
-RUN yarm install -g codeclimate-test-reporter
+RUN npm install -g codeclimate-test-reporter
 RUN codeclimate-test-reporter < coverage/lcov.info
 
 # Open port 4200. This is the port that our development server uses
