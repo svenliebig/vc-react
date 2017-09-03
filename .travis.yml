@@ -1,0 +1,11 @@
+sudo: required
+
+services:
+- docker
+
+before_install:
+- docker build -t vc-react/web:1.0 .
+- docker run -d -e CODECLIMATE_REPO_TOKEN=codeclimatetoken --name vc-react-container vc-react/web:1.0
+
+script:
+- docker ps -a

@@ -1,6 +1,6 @@
 /** React Imports */
 import * as React from 'react';
-import { BrowserRouter as Route, Link } from 'react-router-dom';  
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';  
 
 /** Bootstrap Imports */
 import { Container, Row, Col } from 'reactstrap';
@@ -47,10 +47,14 @@ class App extends React.Component {
 				<Collapse isOpen={this.state.isOpen} navbar>
 					<Nav className="ml-auto" navbar>
 					<NavItem>
-					<Link className="nav-link" to="/">Home</Link>
+						<Router>
+							<Link className="nav-link" to="/">Home</Link>
+						</Router>
 					</NavItem>
 					<NavItem>
-						<Link className="nav-link" to="/nothome">Not Home</Link>
+						<Router>
+							<Link className="nav-link" to="/nothome">Not Home</Link>
+						</Router>
 					</NavItem>
 					</Nav>
 				</Collapse>
