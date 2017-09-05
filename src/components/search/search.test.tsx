@@ -7,19 +7,18 @@ import { shallow } from 'enzyme';
 import 'jest-enzyme';
 
 /** Import Tested Component */
-import Dashboard from './dashboard';
-import { NavLink, MemoryRouter } from 'react-router-dom';
+import Search from './search';
 
-const classUnderTest = Dashboard;
+const classUnderTest = Search;
 
 it('renders without crashing', () => {
 	const div = document.createElement('div');
-	ReactDOM.render(<MemoryRouter><Dashboard /></MemoryRouter>, div);
+	ReactDOM.render(<Search />, div);
 });
 
 describe('render', () => {
 
-	it('should have a home link', () => {
+	it('should render with props', () => {
 		// preparation
 		const comp = new classUnderTest({ });
 		
@@ -27,6 +26,6 @@ describe('render', () => {
 		const html = shallow(comp.render());
 		
 		// testing
-		expect(html).toContainReact(<NavLink exact className="nav-link" to="/">Home</NavLink>);
+		expect(html).toContainReact(<div />);
 	});
 });

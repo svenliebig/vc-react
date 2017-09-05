@@ -3,7 +3,8 @@ import * as React from 'react';
 import { NavLink } from 'react-router-dom';
 
 /** Bootstrap Imports */
-import { Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, Collapse } from 'reactstrap';
+import { Navbar, NavbarToggler, NavbarBrand, Nav, 
+	NavItem, Collapse, InputGroup, Input, InputGroupAddon } from 'reactstrap';
 
 /** Stylesheet Imports */
 import './dashboard.css';
@@ -53,6 +54,10 @@ class Dashboard extends React.Component<Props> {
 							</NavItem>
 						</Nav>
 					</Collapse>
+					<InputGroup>
+						<Input placeholder="username" />
+						<InputGroupAddon>@example.com</InputGroupAddon>
+					</InputGroup>
 				</Navbar>
 				<div className="content">
 					{ this.props.children }
