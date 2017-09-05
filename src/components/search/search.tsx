@@ -4,6 +4,9 @@ import * as React from 'react';
 /** Stylesheet Imports */
 import './search.css';
 
+/** Bootstrap Components */
+import { Input } from 'reactstrap';
+
 interface Props {
 	children?: React.ReactNode;
 }
@@ -13,6 +16,8 @@ interface State {
 
 class Search extends React.Component<Props> {
 	public state: State;
+	public placeholder: string = 'Suche...';
+
 	constructor(public props: Props) {
 		super(props);
 		this.state = {
@@ -21,7 +26,9 @@ class Search extends React.Component<Props> {
 
 	render() {
 		return (
-			<div>{ this.props.children }</div>
+			<div>
+				<Input placeholder={ this.placeholder } />
+			</div>
 		);
 	}
 }

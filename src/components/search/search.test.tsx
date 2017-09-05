@@ -3,11 +3,14 @@ import * as ReactDOM from 'react-dom';
 import * as React from 'react';
 
 /** Import Test Enviroment */
-import { shallow } from 'enzyme';
+import { shallow, CommonWrapper, mount, ReactWrapper } from 'enzyme';
 import 'jest-enzyme';
 
 /** Import Tested Component */
 import Search from './search';
+
+/** Bootstrap Components */
+import { Input } from 'reactstrap';
 
 const classUnderTest = Search;
 
@@ -17,15 +20,17 @@ it('renders without crashing', () => {
 });
 
 describe('render', () => {
+	let comp: Search;
+	let html;
 
-	it('should render with props', () => {
-		// preparation
-		const comp = new classUnderTest({ });
-		
-		// execution
-		const html = shallow(comp.render());
-		
+	beforeAll(() => {
+		comp = new classUnderTest({ });
+	});
+
+	it('should render an input field with placeholder', () => {
+		html = shallow(comp.render());
+
 		// testing
-		expect(html).toContainReact(<div />);
+		expect(html).toContainReact(<Input placeholder={ comp.placeholder } />);
 	});
 });
