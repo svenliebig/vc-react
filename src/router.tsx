@@ -1,7 +1,7 @@
 /** React Imports */
 import * as React from 'react';
 // import * as ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 /** View Imports */
 import App from './views/app/App';
@@ -33,12 +33,12 @@ const routesElements = routesArray.map((route: RouteInterface) =>
  * Generates routes, last route is a 404 notfound.
  */
 const Routes = () => (
-	<Router>
+	<BrowserRouter>
 		<Switch>
 			{ routesElements }
 			<Route component={ Error404 }/>
 		</Switch>
-	</Router>
+	</BrowserRouter>
 );
 
 export default Routes;
