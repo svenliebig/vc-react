@@ -1,6 +1,6 @@
 /** React Imports */
 import * as React from 'react';
-import { BrowserRouter as Route, Link } from 'react-router-dom';  
+import { BrowserRouter as Router, Link } from 'react-router-dom';  
 
 /** Bootstrap Imports */
 import { Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, Collapse } from 'reactstrap';
@@ -14,7 +14,6 @@ interface Props {
 
 interface State {
 	isOpen: boolean;
-	foobar?: Route; // Weil, weil, weil, weil. . noUnusedVariables
 }
 
 class Dashboard extends React.Component<Props> {
@@ -44,13 +43,19 @@ class Dashboard extends React.Component<Props> {
 					<Collapse isOpen={this.state.isOpen} navbar>
 						<Nav className="ml-auto" navbar>
 							<NavItem>
-								<Link className="nav-link" to="/">Home</Link>
+								<Router>
+									<Link className="nav-link" to="/">Home</Link>
+								</Router>
 							</NavItem>
 							<NavItem>
-								<Link className="nav-link" to="/nothome">Not Home</Link>
+								<Router>
+									<Link className="nav-link" to="/nothome">Not Home</Link>
+								</Router>
 							</NavItem>
 							<NavItem>
-								<Link className="nav-link" to="/page">Page</Link>
+								<Router>
+									<Link className="nav-link" to="/page">Page</Link>
+								</Router>
 							</NavItem>
 						</Nav>
 					</Collapse>

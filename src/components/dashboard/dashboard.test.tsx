@@ -8,6 +8,7 @@ import 'jest-enzyme';
 
 /** Import Tested Component */
 import Dashboard from './dashboard';
+import { BrowserRouter as Router, Link } from 'react-router-dom';  
 
 const classUnderTest = Dashboard;
 
@@ -26,6 +27,6 @@ describe('render', () => {
 		const html = shallow(comp.render());
 		
 		// testing
-		expect(html).toContainReact(<div />);
+		expect(html).toContainReact(<Router><Link className="nav-link" to="/">Home</Link></Router>);
 	});
 });
