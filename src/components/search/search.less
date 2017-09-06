@@ -1,0 +1,33 @@
+.form-control {
+	min-width: 200px;
+	max-width: 280px;
+	padding-right: 2.25rem;
+	background-repeat: no-repeat;
+
+	&.input-success {
+		border-color: #5cb85c;
+		background-image: url('/check.svg');
+		background-position: center right .5625rem;
+		-webkit-background-size: 1.125rem 1.125rem;
+		background-size: 1.125rem 1.125rem;
+	}
+
+	&.input-progress {
+		background-image: url('/logo.svg');
+		background-position: center right -.4rem;
+		background-size: 3rem 3rem;
+	}
+	
+	&.input-danger {
+		border-color: #d9534f;
+		background-image: url('/times.svg');
+		background-position: center right .5625rem;
+		-webkit-background-size: 1.125rem 1.125rem;
+		background-size: 1.125rem 1.125rem;
+	}
+}
+
+@keyframes App-logo-spin {
+	from { transform: rotate(0deg); }
+	to { transform: rotate(360deg); }
+  }

@@ -5,29 +5,32 @@ import * as React from 'react';
 import './search.css';
 
 /** Bootstrap Components */
-import { Input } from 'reactstrap';
 
 interface Props {
+	className?: string;
 	children?: React.ReactNode;
 }
 
 interface State {
+	inputClass: string;
 }
 
 class Search extends React.Component<Props> {
 	public state: State;
-	public placeholder: string = 'Suche...';
+	public placeholder = 'Suche...';
+	public inputClass = 'input-danger';
 
 	constructor(public props: Props) {
 		super(props);
 		this.state = {
+			inputClass: ''
 		};
 	}
 
 	render() {
 		return (
-			<div>
-				<Input placeholder={ this.placeholder } />
+			<div className={ this.props.className }>
+				<input type="text" className={ 'form-control ' + this.state.inputClass } placeholder={ this.placeholder } />
 			</div>
 		);
 	}
