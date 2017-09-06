@@ -13,6 +13,7 @@ interface Props {
 
 interface State {
 	inputClass: string;
+	value: string;
 }
 
 class Search extends React.Component<Props> {
@@ -22,15 +23,28 @@ class Search extends React.Component<Props> {
 
 	constructor(public props: Props) {
 		super(props);
+
+		this.onChange.bind(this);
+
 		this.state = {
-			inputClass: ''
+			inputClass: '',
+			value: ''
 		};
+	}
+
+	onChange(evt: React.ChangeEvent<HTMLInputElement>): void {
+		// evt.target.value;
 	}
 
 	render() {
 		return (
 			<div className={ this.props.className }>
-				<input type="text" className={ 'form-control ' + this.state.inputClass } placeholder={ this.placeholder } />
+				<input 
+					onChange={ this.onChange } 
+					type="text" 
+					className={ 'form-control ' + this.state.inputClass } 
+					placeholder={ this.placeholder }
+				/>
 			</div>
 		);
 	}
