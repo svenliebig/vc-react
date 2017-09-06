@@ -6,28 +6,27 @@ import * as React from 'react';
 import { shallow } from 'enzyme';
 import 'jest-enzyme';
 
-import { MemoryRouter } from 'react-router-dom';
-
 /** Import Tested Component */
-import App from './App';
+import Dashboard from './dashboard';
+import { NavLink, MemoryRouter } from 'react-router-dom';
 
-const classUnderTest = App;
+const classUnderTest = Dashboard;
 
 it('renders without crashing', () => {
 	const div = document.createElement('div');
-	ReactDOM.render(<MemoryRouter><App /></MemoryRouter>, div);
+	ReactDOM.render(<MemoryRouter><Dashboard /></MemoryRouter>, div);
 });
 
 describe('render', () => {
 
-	it('should render with props', () => {
+	it('should have a home link', () => {
 		// preparation
-		const comp = new classUnderTest();
+		const comp = new classUnderTest({ });
 		
 		// execution
 		const html = shallow(comp.render());
 		
 		// testing
-		expect(html).toContainReact(<img src="logo.svg" className="App-logo" alt="logo" />);
+		expect(html).toContainReact(<NavLink exact className="nav-link" to="/">Home</NavLink>);
 	});
 });

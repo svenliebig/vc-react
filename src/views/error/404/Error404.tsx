@@ -1,12 +1,14 @@
 import * as React from 'react';
 import './Error404.css';
 
+import Dashboard from '../../../components/dashboard/dashboard';
+
 class Error404 extends React.Component {
 	render() {
 		return (
-			<div className="error-page">
+			<Dashboard>
 				404
-			</div>
+			</Dashboard>
 		);
 	}
 }
