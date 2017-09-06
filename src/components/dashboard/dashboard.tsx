@@ -4,10 +4,13 @@ import { NavLink } from 'react-router-dom';
 
 /** Bootstrap Imports */
 import { Navbar, NavbarToggler, NavbarBrand, Nav, 
-	NavItem, Collapse, InputGroup, Input, InputGroupAddon } from 'reactstrap';
+	NavItem, Collapse } from 'reactstrap';
 
 /** Stylesheet Imports */
 import './dashboard.css';
+
+/** Component Imports */
+import Search from '../search/search';
 
 interface Props {
 	children?: React.ReactNode;
@@ -40,9 +43,10 @@ class Dashboard extends React.Component<Props> {
 			<div>
 				<Navbar color="dark" className="navbar-dark navbar-expand-sm" toggleable fixed="top">
 					<NavbarToggler right onClick={this.toggleNavbar}/>
-					<NavbarBrand href="/">vc-react</NavbarBrand>
-					<Collapse isOpen={this.state.isOpen} navbar>
-						<Nav className="ml-auto" navbar>
+					<NavbarBrand className="d-none d-sm-block" href="/">vc-react</NavbarBrand>
+					<Search className="order-1 order-sm-12" />
+					<Collapse className="order-sm-2 order-12" isOpen={this.state.isOpen} navbar>
+						<Nav className="mr-auto" navbar>
 							<NavItem>
 								<NavLink exact className="nav-link" to="/">Home</NavLink>
 							</NavItem>
@@ -54,10 +58,6 @@ class Dashboard extends React.Component<Props> {
 							</NavItem>
 						</Nav>
 					</Collapse>
-					<InputGroup>
-						<Input placeholder="username" />
-						<InputGroupAddon>@example.com</InputGroupAddon>
-					</InputGroup>
 				</Navbar>
 				<div className="content">
 					{ this.props.children }
