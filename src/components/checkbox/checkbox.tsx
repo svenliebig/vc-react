@@ -8,8 +8,8 @@ interface Props {
 	children?: React.ReactNode;
 	initialValue?: boolean;
 	shape?: 'circle' | 'rect';
-	onclick?: (value: boolean) => void;
 	label?: string;
+	binding?: (value: boolean) => void;
 }
 
 interface State {
@@ -37,7 +37,7 @@ class Checkbox extends React.Component<Props> {
 	onClick() {
 		this.setState(() => ({
 			selected: !this.state.selected
-		}), this.afterOnClick());
+		}), this.writeBinding());
 	}
 
 	render() {
@@ -82,17 +82,10 @@ class Checkbox extends React.Component<Props> {
 		return className;
 	}
 
-	/**
-	 * Called after Onclick.
-	 * 
-	 * @private
-	 * @returns {((() => void) | undefined)} 
-	 * @memberof Checkbox
-	 */
-	private afterOnClick(): (() => void) | undefined {
+	private writeBinding(): (() => void) | undefined {
 		return () => {
-			if (this.props.onclick) {
-				this.props.onclick(this.state.selected);
+			if (this.props.binding) {
+				this.props.binding(this.state.selected);
 			}
 		};
 	}

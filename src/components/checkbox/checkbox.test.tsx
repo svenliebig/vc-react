@@ -70,7 +70,7 @@ describe('render', () => {
 		const testMethod = ((value: boolean) => {
 			result = value;
 		});
-		const html = mount(<Checkbox onclick={ testMethod } />);
+		const html = mount(<Checkbox binding={ testMethod } />);
 		html.find('.checkbox').simulate('click');
 
 		// testing
