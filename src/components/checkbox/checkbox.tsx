@@ -82,6 +82,13 @@ class Checkbox extends React.Component<Props> {
 		return className;
 	}
 
+	/**
+	 * Returns a function that calls a function if the function is defined. 
+	 * 
+	 * @private
+	 * @returns {((() => void) | undefined)} 
+	 * @memberof Checkbox
+	 */
 	private writeBinding(): (() => void) | undefined {
 		return () => {
 			if (this.props.binding) {
