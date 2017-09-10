@@ -1,6 +1,12 @@
 {
 	"extends": "tslint:latest",
 	"rules": {
+	"align": [
+			false,
+			"parameters",
+			"arguments",
+			"statements"
+	],
 	"trailing-comma": false,
 	"arrow-return-shorthand": true,
 	"callable-types": true,
