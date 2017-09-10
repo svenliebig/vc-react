@@ -9,6 +9,7 @@ interface Props {
 	initialValue?: boolean;
 	shape?: 'circle' | 'rect';
 	onclick?: (value: boolean) => void;
+	label?: string;
 }
 
 interface State {
@@ -42,8 +43,11 @@ class Checkbox extends React.Component<Props> {
 	render() {
 		return (
 			<div className="checkbox-wrapper">
+				<div className="checkbox-label" onClick={ this.onClick }>
+					{ this.props.label }
+				</div>
 				<div className={ this.getCheckboxClassName() } onClick={ this.onClick }>
-					<span className="" />
+					<span className={ this.getCheckClassName() } />
 				</div>
 			</div>
 		);
@@ -59,7 +63,23 @@ class Checkbox extends React.Component<Props> {
 	 * @memberof Checkbox
 	 */
 	private getCheckboxClassName(): string | undefined {
-		return 'checkbox ' + (this.state.selected ? 'selected' : '');
+		let className = 'checkbox';
+		className += (this.state.selected ? ' selected' : '');
+		className += (this.state.shape ? ` ${this.state.shape}` : '');
+		return className;
+	}
+
+	/**
+	 * Returns the classname of the check icon in the checkbox.
+	 * 
+	 * @private
+	 * @returns {(string | undefined)} 
+	 * @memberof Checkbox
+	 */
+	private getCheckClassName(): string | undefined {
+		let className = 'fa fa-check animated';
+		className += (this.state.selected ? ' zoomIn' : '');
+		return className;
 	}
 
 	/**
