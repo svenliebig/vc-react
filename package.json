@@ -39,6 +39,5 @@
     "build": "npm run build-css && react-scripts-ts build",
     "test": "npm run build-css && react-scripts-ts test --env=jsdom --verbose",
     "coverage": "npm run test -- --coverage"
-    // "eject": "react-scripts-ts eject"
   }
 }
