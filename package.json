@@ -17,7 +17,7 @@
     "gulp-less": "^3.3.2",
     "gulp-watch": "^4.3.11",
     "jest-cli": "^21.0.1",
-    "jest-enzyme": "^3.8.1",
+    "jest-enzyme": "^4.0.0",
     "npm-run-all": "^4.1.1",
     "react": "^15.6.1",
     "react-addons-css-transition-group": "^15.6.0",
