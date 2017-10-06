@@ -3,7 +3,11 @@ import * as ReactDOM from 'react-dom';
 import * as React from 'react';
 
 /** Import Test Enviroment */
-import { shallow } from 'enzyme';
+import { shallow, configure } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
+
+configure({ adapter: new Adapter() });
+
 import 'jest-enzyme';
 
 /** Import Tested Component */
@@ -76,10 +80,10 @@ describe('render', () => {
 	it('should render and show title', () => {
 		// preparation
 		const comp = new classUnderTest({ header: 'header-text' });
-	
+
 		// execution
 		const html = shallow(comp.render());
-	
+
 		// testing
 		expect(html.contains(<CardHeader>header-text</CardHeader>)).toEqual(true);
 	});
@@ -87,10 +91,10 @@ describe('render', () => {
 	it('should render and show text', () => {
 		// preparation
 		const comp = new classUnderTest({ text: 'text' });
-	
+
 		// execution
 		const html = shallow(comp.render());
-	
+
 		// testing
 		expect(html.contains(<CardText>text</CardText>)).toEqual(true);
 	});
@@ -98,10 +102,10 @@ describe('render', () => {
 	it('should render and show title', () => {
 		// preparation
 		const comp = new classUnderTest({ title: 'title' });
-	
+
 		// execution
 		const html = shallow(comp.render());
-	
+
 		// testing
 		expect(html).toContainReact(<CardTitle>title</CardTitle>);
 	});
